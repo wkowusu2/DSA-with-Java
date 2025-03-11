@@ -15,6 +15,10 @@ public class LinkedListCode {
         LinkedListClass nums = new LinkedListClass();
         nums.add(5);
         nums.add(10);
+        // nums.add(15);
+        nums.add(20);
+        nums.addFirst(15);
+        nums.deleteNode(10);
         nums.printList();
     }
 }

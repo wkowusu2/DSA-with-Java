@@ -31,10 +31,35 @@ public class LinkedListClass {
 
     }
     public void printList(){
+        current = head; 
         while(current != null){
             System.out.print(current.data + " -> ");
             current = current.next;
         }
         System.out.println("null");
+    }
+
+    public void addFirst(int data){
+        Node newNode = new Node(data); 
+        //my own logic but requries extral time
+        // if(head == null){
+        //     head = newNode;
+        // }else{
+        //     Node tempNode = head;
+        //     head = newNode; 
+        //     head.next = tempNode;
+        // }
+        
+        //actual logic, requires less time
+        newNode.next = head;
+        head = newNode;
+    }
+
+    public void deleteNode(int data){
+        current = head; 
+        while(current != null && current.next.data != data){
+             current = current.next;
+        }
+        current.next = current.next.next;
     }
 }
